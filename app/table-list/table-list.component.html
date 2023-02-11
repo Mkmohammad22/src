@@ -1,0 +1,62 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Book</h4>
+
+                      <p class="card-category">Liste des Books</p>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>
+                                      ID
+                                  </th>
+                                  <th>
+                                      Titre
+                                  </th>
+                                  <th>
+                                      Prix
+                                  </th>
+                                  <th>
+                                      Description
+                                  </th>
+                                  <th>
+                                      Action
+                                  </th>
+                              </thead>
+                              <tbody>
+                                  <tr *ngFor="let Book of Book; let i = index">
+                                      <td>
+                                         {{Book.id}}
+                                      </td>
+                                      <td>
+                                         {{Book.name}}
+                                      </td>
+                                      <td>
+                                        {{Book.price}}
+                                      </td>
+                                      <td>
+                                        {{Book.description}}
+                                      </td>
+                                      <td>
+                                        <button type="button" class="btn btn-success" routerLink="/upgrade/{{Book.id}}">Edit</button>
+                                        <button type="button" class="btn btn-danger"(click)="delete(Book.id,i)">Delete</button>
+
+
+                                      </td>
+                                      
+                                  
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+         
+      </div>
+  </div>
+</div>
